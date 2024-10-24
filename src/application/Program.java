@@ -48,7 +48,8 @@ public class Program {
 				System.out.println("ERROR: Valor inserido nao e valido");
 			} catch (ArithmeticException e) {
 				System.out.println("ERROR: Divisão por 0 nao e permitida");
-			}
+			} 
+			
 		}
 		sc.close();
 	}
