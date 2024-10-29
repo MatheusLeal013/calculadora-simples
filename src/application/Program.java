@@ -16,8 +16,10 @@ public class Program {
 		System.out.print("Caso deseje prosseguir, digite 'C', caso não, digite qualquer coisa: ");
 		char c = sc.next().charAt(0);
 
-		while (c == 'C') {
+		while (Character.toUpperCase(c) == 'C') {
 			try {
+				new ProcessBuilder("clear").inheritIO().start().waitFor();
+				
 				System.out.print("Insira o valor 1: ");
 				int num1 = sc.nextInt();
 				System.out.print("Insira o valor 2: ");
@@ -44,11 +46,15 @@ public class Program {
 				System.out.print("Digite 'C' para relizar outra operacao, ou digite qualquer coisa para encerrar: ");
 				c = sc.next().charAt(0);
 				
+				new ProcessBuilder("clear").inheritIO().start().waitFor();
+				
 			} catch (InputMismatchException e) {
 				System.out.println("ERROR: Valor inserido nao e valido");
 			} catch (ArithmeticException e) {
 				System.out.println("ERROR: Divisão por 0 nao e permitida");
-			} 
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			
 		}
 		sc.close();
